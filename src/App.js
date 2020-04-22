@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
+import { getUser, getRepositories } from './services/githubApi';
 import './styles/App.css';
 
 function App() {
   const [username, setUsername] = useState('');
+  const [profile, setProfile] = useState(null);
+  const [repositories, setRepositories] = useState([]);
 
-  const handleSearch = (name) => {};
+  const handleSearch = async (name) => {
+    try {
+      const user = await getUser(name);
+      const repos = await getRepositories(name);
+      setProfile(user);
+      setRepositories(repos);
+    } catch (err) {
+      setProfile(null);
+      setRepositories([]);
+    }
+  };
 
   return (
     <div className="app">
@@ -17,6 +30,12 @@ function App() {
           onSearch={handleSearch}
         />
       </header>
+
+      {profile && (
+        <p>
+          Found {profile.login} with {repositories.length} repositories.
+        </p>
+      )}
     </div>
   );
 }
