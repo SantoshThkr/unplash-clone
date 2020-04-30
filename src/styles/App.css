@@ -108,3 +108,38 @@ a {
   gap: 20px;
   margin-bottom: 15px;
 }
+
+.repositories h2 {
+  text-align: center;
+}
+
+.repo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.repository {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+}
+
+.repository h3 {
+  margin: 0 0 8px;
+  word-break: break-word;
+}
+
+.repository p {
+  margin: 0 0 10px;
+  color: #586069;
+}
+
+.repo-info {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

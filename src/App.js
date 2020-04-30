@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import Profile from './components/Profile';
+import RepositoryList from './components/RepositoryList';
 import { getUser, getRepositories } from './services/githubApi';
 import './styles/App.css';
 
@@ -32,7 +33,12 @@ function App() {
         />
       </header>
 
-      {profile && <Profile profile={profile} />}
+      {profile && (
+        <>
+          <Profile profile={profile} />
+          <RepositoryList repositories={repositories} />
+        </>
+      )}
     </div>
   );
 }
