@@ -143,3 +143,12 @@ a {
   margin-bottom: 10px;
   font-size: 14px;
 }
+
+.status {
+  text-align: center;
+  color: #586069;
+}
+
+.error {
+  color: #cb2431;
+}
